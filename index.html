@@ -203,6 +203,12 @@ body{font-family:'Tajawal','Cairo','Segoe UI',Tahoma,Arial,sans-serif}
 .ic2 .credit{font-size:clamp(17px,3.2vh,26px);font-weight:900;line-height:1.5}
 footer{font-size:15px}
 .nameIn,button,input{font-family:inherit}
+
+.ic2 h2 .h1l{font-size:1.35em;line-height:1.15}
+.ic2 .credit .c1,.ic2 .credit .c2{display:block}.ic2 .credit .sep{display:none}
+@media (max-width:860px),(max-aspect-ratio:1/1){footer .sep{display:none}footer .c1,footer .c2{display:block}}
+@media (max-aspect-ratio:1/1){.ic2 h2{font-size:clamp(22px,6.4vw,34px)}.ic2 h2 .h1l{font-size:1.7em}}
+@media (max-aspect-ratio:1/1){.ic2 h2{font-size:clamp(26px,8vw,42px)}.ic2 .credit{font-size:clamp(14px,4.2vw,20px)}}
 .scene .carrack{animation:cr 46s -8s linear infinite}@keyframes cr{from{transform:translateX(-200px)}to{transform:translateX(1300px)}}
 .scene .rk{animation:rock 3.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center bottom}
 .scene .ropath{animation:gl 3s linear infinite}
@@ -228,7 +234,7 @@ footer{font-size:15px}
       <div class="zb"><button id="zIn" aria-label="تكبير">＋</button><button id="zOut" aria-label="تصغير">－</button><button id="zFit" aria-label="الخريطة كاملة" style="font-size:16px">⤢</button></div>
     </div></div>
   </div>
-  <footer>إعداد: أ. عهود العبرية - مدرسة وادي غول للتعليم الأساسي <span style="white-space:nowrap">(<span class="rng" dir="rtl"><span>1</span><span>-</span><span>9</span></span>)</span></footer>
+  <footer><span class="c1">إعداد: أ. عهود العبرية</span><span class="sep"> - </span><span class="c2">مدرسة وادي غول للتعليم الأساسي <span style="white-space:nowrap">(<span class="rng" dir="rtl"><span>1</span><span>-</span><span>9</span></span>)</span></span></footer>
 </div>
 
 <div class="overlay" id="intro">
@@ -236,11 +242,11 @@ footer{font-size:15px}
   <div class="ic2">
     <div class="top">
       <div class="lesson">الصف الثامن</div>
-      <h2>عُمان ومقاومة الاحتلال البرتغالي</h2>
+      <h2><span class="h1l">عُمان</span><br>ومقاومة الاحتلال البرتغالي</h2>
     </div>
     <div class="bot">
       <button class="btn gold" id="startBtn">ابدأ الرحلة ⛵</button>
-      <div class="credit">إعداد: أ. عهود العبرية - مدرسة وادي غول للتعليم الأساسي <span style="white-space:nowrap">(<span class="rng" dir="rtl"><span>1</span><span>-</span><span>9</span></span>)</span></div>
+      <div class="credit"><span class="c1">إعداد: أ. عهود العبرية</span><span class="sep"> - </span><span class="c2">مدرسة وادي غول للتعليم الأساسي <span style="white-space:nowrap">(<span class="rng" dir="rtl"><span>1</span><span>-</span><span>9</span></span>)</span></span></div>
     </div>
   </div>
 </div>
@@ -434,8 +440,8 @@ function onOcean(lo,la,isLand){
   if(!o){wrong('هذا بحر أو خليج وليس محيطًا، جرّب مرة أخرى');return}
   if(found.has(o)){toast('حدّدت هذا المحيط من قبل، ابحث عن المحيط الآخر','bad');return}
   found.add(o);sfx.ok();const slot=found.size===1?'chA':'chB';const ch=$(slot);ch.textContent=ONAME[o];ch.classList.add('on');
-  const [x,y]=o==='atl'?[-19,6]:[66,-8];
-  mk(TXT(ONAME[o],0,19,'#073B4C'),x,y,1.1,'oc_'+o);
+  const [x,y]=o==='atl'?[-2,-10]:[60,-16];
+  mk(TXT(ONAME[o],0,15,'#073B4C'),x,y,1,'oc_'+o);
   toast('✔ '+ONAME[o],'ok',1400);
   if(found.size===2)correct('المحيطان اللذان مرّت بهما الحملة البرتغالية في طريقها إلى عُمان: المحيط الأطلسي والمحيط الهندي.',null,true);
 }
